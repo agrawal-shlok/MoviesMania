@@ -146,4 +146,6 @@ if selected == "Choose specifc movies":
 # with col3:
        # homepage_url = 'https://www.themoviedb.org/movie/{}'.format(movie_id_for_image[i])
        # st.write("[Explore](%s)" % homepage_url)
+
+    #    vfhgucftvguhcfvt
     
