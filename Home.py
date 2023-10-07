@@ -61,28 +61,44 @@ def process():
     for i in movie_names_list:
             idx = idx_of_movie_in_dataframe(i)
             movie_id_for_image.append(get_movie_id(idx))
-
-    while st.button("Show"):
-            k=0
-            for i in range(1):
-                columns = st.columns(5)
-                for j in range(len(columns)):
-                                with columns[j]:
-                                    homepage_url = 'https://www.themoviedb.org/movie/{}'.format(movie_id_for_image[k+j])
-                                    # print(recommendations[i])
-                                    st.image(fetch_image(movie_id_for_image[k+j]  ))
-                                    st.write(movie_names_list[k+j])
-                                    # url = "https://www.streamlit.io"
-                                    st.write("[Explore](%s)" % homepage_url)
-                                    
-                                    hasClicked = card(
-                                          title=st.write(movie_names_list[k+j]),
-                                          text="Movie",
-                                          image=fetch_image(movie_id_for_image[k+j]  ),
-                                          url=homepage_url
-                                        )
- 
-                k += 6
+    count=0
+    count2=0
+    k=0
+    while(st.checkbox('Show More', key=count2)):
+                # if st.checkbox("Show More!", key=count):
+        columns = st.columns(2)
+        for j in range(len(columns)):
+                                    with columns[j]:
+                                        homepage_url = 'https://www.themoviedb.org/movie/{}'.format(movie_id_for_image[k+j])
+                                        # print(recommendations[i])
+                                        # st.image(fetch_image(movie_id_for_image[k+j]  ))
+                                        # st.write(movie_names_list[k+j])
+                                        url = "https://www.streamlit.io"
+                                        # st.write("[Explore](%s)" % homepage_url)
+                                        
+                                        hasClicked = card(
+                                              title=st.write(movie_names_list[k+j]),
+                                              text="Explore",
+                                              image=fetch_image(movie_id_for_image[k+j]  ),
+                                              url=homepage_url,
+                                              on_click=lambda: print("Clicked!"),
+                                              styles={
+                                                            "card": {
+                                                                "width": "300px",
+                                                                "height": "400px",
+                                                                "border-radius": "60px",
+                                                                "box-shadow": "0 0 10px rgba(0,0,0,0.5)",
+                                                               
+                                                            },
+                                                            "text": {
+                                                                "font-family": "serif",
+                                                               
+                                                            }
+                                                }
+                                            )
+        count2+=1
+                # count+=1
+        k += 6
 
 
 st.set_page_config(
