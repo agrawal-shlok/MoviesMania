@@ -24,3 +24,4 @@ streamlit_extras==0.3.2
 streamlit_option_menu==0.3.6
 tensorflow==2.13.0
 tqdm==4.65.0
+libgl1
