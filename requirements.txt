@@ -12,7 +12,6 @@ numpy==1.24.3
 opencv_python==4.8.0.76
 pandas==2.0.3
 Pillow==9.5.0
-Pillow==10.0.1
 plotly==5.16.1
 pytube==15.0.0
 Requests==2.31.0
